@@ -27,6 +27,9 @@ def pascal_triangle(n):
     time-complexity - n^2
     space: n
     """
+    if n <= 1:
+        return []
+
     result = [[] for i in range(n)]
     for i in range(n):
         for j in range(i + 1):
