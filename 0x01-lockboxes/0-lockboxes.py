@@ -1,18 +1,17 @@
 #!/usr/bin/python3
-"""
-unlocking locked box using keys from different box
-"""
+"""unlocking locked box using keys from different """
 
 
 def canUnlockAll(boxes):
-    if type(boxes) != list:
+    """Unlock boxes"""
+    if (type(boxes) is not list or len(boxes) == 0):
         return False
-
-    opened_boxes = [0]
-    for i in opened_boxes:
-        for key in boxes[i]:
-            if not key in opened_boxes and key < len(boxes):
-                opened_boxes.append(key)
-                print(opened_boxes)
-
-    return len(boxes) == len(opened_boxes)
+    for k in range(1, len(boxes) - 1):
+        unlocked = False
+        for i in range(len(boxes)):
+            unlocked = k in boxes[i] and k != i
+            if unlocked:
+                break
+        if unlocked is False:
+            return unlocked
+    return True
