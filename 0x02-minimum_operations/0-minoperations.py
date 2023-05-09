@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """returns the minimum number to copy and paste"""
 
 
