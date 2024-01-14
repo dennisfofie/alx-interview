@@ -1,9 +1,7 @@
-#!/usr/bin/python3
+
 """unlocking locked box using keys from different """
 
-
 def canUnlockAll(boxes):
-    """Unlock boxes"""
     if (type(boxes) is not list or len(boxes) == 0):
         return False
     for k in range(1, len(boxes) - 1):
