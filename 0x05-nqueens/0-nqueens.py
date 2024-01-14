@@ -98,9 +98,10 @@ def build_solution(row, group):
 
 
 def get_solutions():
-    """Gets the solutions for the given chessboard size."""
+    """Gets the solutions for the given chessboard size.
+    """
     global pos, n
-    pos = list(map(lambda x: [x // n, x % n], range(n**2)))
+    pos = list(map(lambda x: [x // n, x % n], range(n ** 2)))
     a = 0
     group = []
     build_solution(a, group)
