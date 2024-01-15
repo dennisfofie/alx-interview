@@ -1,7 +1,8 @@
 const request = require('request');
 
+let movieId = 0;
 
-if (process.argv.length === 2) {
+if (process.argv.length > 2) {
     movieId = process.argv[2];
   }
   else {
@@ -22,7 +23,7 @@ if (process.argv.length === 2) {
         const result = JSON.parse(body)
         console.log(result)
 
-        for (let i = 1; i <= result['characters']; i++) {
+        for (let i = 1; i <= result['characters'].length; i++) {
             request(CHARACTER_ENDPOINT + i, (error, response, body) => {
                 if (error) {
                     console.log(error)
