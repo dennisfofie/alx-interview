@@ -9,7 +9,7 @@ if (process.argv.length === 2) {
   }
 
   const BASE_ENDPOINT = `https://swapi-api.alx-tools.com/api/films/${movieId}`
-  const CHARACTER_ENDPOINT = "https://swapi-api.alx-tools.com/api/people"
+  const CHARACTER_ENDPOINT = "https://swapi-api.alx-tools.com/api/people/"
 
   try {
     request(BASE_ENDPOINT, (error, response, body) => {
