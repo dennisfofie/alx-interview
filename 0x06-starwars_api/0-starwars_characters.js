@@ -30,7 +30,7 @@ if (process.argv.length > 2) {
                 }
                 if (response.statusCode == 200) {
                     const secondResult = JSON.parse(body);
-                    console.log(secondResult['name']);
+                    console.log(secondResult['name'].join("\n"));
 
                 }
             })
