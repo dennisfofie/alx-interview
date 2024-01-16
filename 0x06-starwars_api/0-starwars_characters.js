@@ -11,7 +11,6 @@ if (process.argv.length > 2) {
   }
 
   const BASE_ENDPOINT = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
-  const CHARACTER_ENDPOINT = "https://swapi-api.alx-tools.com/api/people/";
 
   try {
     request(BASE_ENDPOINT, (error, response, body) => {
@@ -24,8 +23,8 @@ if (process.argv.length > 2) {
         const result = JSON.parse(body);
         console.log(result);
 
-        for (let i = 1; i <= result['characters'].length; i++) {
-            request(CHARACTER_ENDPOINT + i, (error, response, body) => {
+        for (let i = 0; i < result['characters'].length; i++) {
+            request(result['characters'][i], (error, response, body) => {
                 if (error) {
                     console.log(error);
                 }
@@ -37,9 +36,8 @@ if (process.argv.length > 2) {
             })
         }
 
-    });
+    })
 }
 catch (error) {
     console.log(error)
 }
-
