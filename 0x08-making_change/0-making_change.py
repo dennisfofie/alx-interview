@@ -20,4 +20,5 @@ def makeChange(coins, total):
                 if sub_res != sys.maxsize and sub_res + 1 < table[i]:
                     table[i] = sub_res + 1
 
-    return -1 if table[total] == sys.maxsize else table[total]i
+    return -1 if table[total] == sys.maxsize else table[total]
+
